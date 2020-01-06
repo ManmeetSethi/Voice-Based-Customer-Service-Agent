@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+  <title>Stock</title>
+</head>
+
+<body>
+<style>
+.container {
+  height: 200px;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+
+
+  <div style="text-align: center;">
+    <div class="jumbo"><b>Brown Boys</b></div><img src="{{url_for('static',filename='stock.png')}}" class="image">
+    <hr>
+    <form method="POST" action="/switch">
+      <input type="submit" class="btn btn-primary" name="submit_button" value="Switch to Customer Care">
+      
+    </form>
+  </div>
+  <br>
+
+
+  <div class="container h-100">
+      <div class="form-group row">
+      <div class="col-md-8 col-sm-12 mx-auto">
+        <div class="h-100 justify-content-center">
+          <div class="chat-container" style="overflow: auto; max-height: 80vh">
+            <!-- chat messages -->
+          </div>
+        </div>
+          <form id="target" method="POST">
+            <input class="input" type="text" value="" placeholder="Enter message..." id="input_message">
+            <input type="submit" hidden>
+          </form>
+      </div>
+      </div>
+  </div>
+
+    <div class="col-xs-4 center" style="margin-left: auto; margin-right: auto; top: 100%">
+        <form method="GET" action="/index">
+          <input type="image" src="{{url_for('static',filename='disconnect.png')}}" alt="Submit" width="48" height="48">
+        </form>
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+  <script src="{{url_for('static',filename='custom.js')}}"></script>
+
+
+</body>
+
+</html>

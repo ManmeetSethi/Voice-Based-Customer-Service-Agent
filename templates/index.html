@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+  <title>Stock</title>
+</head>
+
+<body>
+<style>
+.container {
+  height: 100px;
+  position: relative;
+  border: 3px solid green;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</style>
+  <div style="text-align: center;">
+    <div class="jumbo"><b>Brown Boys</b></div><img src="{{url_for('static',filename='stock.png')}}" class="image">
+    <hr>
+  </div>
+  <div class="container h-100">
+      <div class="form-group row">
+
+    <div class="row align-items-center h-100 center" style="margin-right: auto">
+        <div class="col-xs-4" style="margin-left: auto; margin-right: auto">
+            <form method="POST" action="/main">
+                <label for="ex3">Mobile No.:</label>
+                <input class="form-control" id="phone_no" name="phone_no" type="text">
+                <br>
+                <pre class="tab">         <input type="image" src="{{url_for('static',filename='call.png')}}" alt="Submit" width="48" height="48"></pre>
+
+            </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+  <script src="{{url_for('static',filename='custom.js')}}"></script>
+
+</body>
+
+</html>

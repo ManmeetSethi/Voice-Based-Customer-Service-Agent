@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+  <title>Stock</title>
+</head>
+
+<body>
+<style>
+.container {
+  height: 200px;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+</style>
+
+
+
+
+
+
+  <div style="text-align: center;">
+    <div class="jumbo"><b>Brown Boys</b></div><img src="{{url_for('static',filename='stock.png')}}" class="image">
+    <hr>
+  </div>
+
+  <div class="jumbotron"><h6>
+    <div style="text-align:center">
+
+      {% if cust_name!=-1 %} <h2> <b>Name : </b>{{ cust_name }}</h2> {% endif %}
+      {% if cust_phone!=-1 %} <h2> <b>Phone No. : </b>{{ cust_phone }}</h2> {% endif %}
+      {% if cust_user_id!=-1 %} <h2> <b>User ID : </b>{{ cust_user_id }}</h2> {% endif %}
+      {% if cust_order_id!=-1 %} <h2> <b>Concerned Order ID : </b>{{ cust_order_id }}</h2> {% endif %}
+    </div></h6>
+
+
+  </div>
+
+  {% if cust_records!=[] %}
+    <div class="container">
+      <h2><b>Customer's Order Details</b></h2>           
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Complaints</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+        {% for o in cust_records %}
+        <tr>
+          <td>{{ o[1] }}</td>
+          <td>{{ o[2] }}</td>
+          <td>{{ o[4] }}</td>
+          <td>{{ o[5] }}</td>
+          <td>{{ o[6] }}</td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+      </table>
+      <br>
+      <br>
+    </div>
+
+{% endif %}
+
+
+  
+
+    
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+  <script src="{{url_for('static',filename='custom.js')}}"></script>
+
+
+</body>
+
+</html>
