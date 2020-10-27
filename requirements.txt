@@ -10,7 +10,7 @@ cffi==1.13.0
 chardet==3.0.4
 ChatterBot==1.0.5
 Click==7.0
-cryptography==2.8
+cryptography==3.2
 cycler==0.10.0
 cymem==2.0.2
 dialogflow==0.7.2
