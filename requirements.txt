@@ -71,7 +71,7 @@ PyPrind==2.11.2
 python-dateutil==2.7.5
 pyttsx3==2.71
 pytz==2019.3
-PyYAML==5.1.2
+PyYAML==5.4
 requests==2.22.0
 robobrowser==0.5.3
 rsa==4.0
