@@ -55,7 +55,7 @@ Pint==0.9
 pipwin==0.4.5
 plac==0.9.6
 preshed==2.0.1
-protobuf==3.10.0
+protobuf==3.18.3
 pusher==2.1.4
 pyasn1==0.4.7
 pyasn1-modules==0.2.7
